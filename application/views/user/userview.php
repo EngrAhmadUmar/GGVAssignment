@@ -3,6 +3,7 @@
   $product = $this->db->get_where('products', array('ID' => $product_id))->result_array();
   foreach($product as $row):
     $sellername = $row['sellername'];
+    $product_name = $row['name']; 
 ?>
 
 
@@ -76,39 +77,45 @@
                     }
                     </script>
 
-                    <div class="product-details__btn">
-                        <a class="add" data-toggle="modal" data-target="#contactModal">
+                    <div data-toggle="modal" data-target="#contactModal" class="product-details__btn"
+                        style="cursor: pointer;">
+                        <a class="add">
                             <span>
                                 <img src="https://img.icons8.com/android/24/000000/phone.png" />
                             </span>
-                            Contact Buyer</a>
+                            Send Bid</a>
                     </div>
                 </div>
 
                 <div class="product-detail__right">
                     <div class="product-detail__content">
                         <h3><?php echo $row['name'];?></h3>
-                        <div class="price">
-                            <span class="new__price"><?php echo $row['price'];?></span>
-                        </div>
+                        <!-- <div class="price">Starting Price
+                            <span class="new__price">RWF <?php echo number_format($row['price'],1); ?></span>
+                        </div> -->
                         <p>
                             <?php echo $row['description'];?>
                         </p>
                         <div class="product__info-container">
                             <ul class="product__info">
-                                <li class="select">
-                                </li>
                                 <li>
-                                    <span>Brand:</span>
-                                    <a href="#"><?php echo $row['brand'];?></a>
+                                    <span>Starting Price:</span>
+                                    <a href="#" class="in-stock">RWF <?php echo number_format($row['price'],1); ?></a>
                                 </li>
+                                <?php if($row['type']!=""){
+                                    ?>
                                 <li>
                                     <span>Product Type:</span>
                                     <a href="#"><?php echo $row['type'];?></a>
                                 </li>
+                                <?php } ?>
                                 <li>
-                                    <span>Availability:</span>
+                                    <span>Quantity for sale:</span>
                                     <a href="#" class="in-stock"><?php echo $row['availablestock'];?></a>
+                                </li>
+                                <li>
+                                    <span>Item Location:</span>
+                                    <a href="#" class="in-stock"><?php echo $row['location'];?></a>
                                 </li>
                             </ul>
                         </div>
@@ -149,7 +156,8 @@ foreach($products as $product):
                                     <h3><?php echo $product['name'];?></h3>
 
                                     <div class="product__price">
-                                        <h4><?php echo $product['price'];?></h4>
+                                        <h4>Starting Price: RWF <?php $price = $product['price']; 
+                                    echo $price;?>.0</h4>
                                     </div>
                                     <a href="<?php echo base_url().'user/shop/'.$product['ID'];?>"><button type="submit"
                                             class="product__btn">View Product</button></a>
@@ -199,7 +207,8 @@ foreach($products as $product):
                                     <h3><?php echo $product['name'];?></h3>
 
                                     <div class="product__price">
-                                        <h4><?php echo $product['price'];?></h4>
+                                        <h4>Starting Price: RWF <?php $price = $product['price']; 
+                                    echo $price;?>.0</h4>
                                     </div>
                                     <a href="<?php echo base_url().'user/shop/'.$product['ID'];?>"><button type="submit"
                                             class="product__btn">View Product</button></a>
@@ -232,23 +241,23 @@ foreach($products as $product):
             <div class="facility__contianer" data-aos="fade-up" data-aos-duration="1200">
                 <div class="facility__box">
                     <div class="facility-img__container">
-                        <img src="https://img.icons8.com/pastel-glyph/24/000000/airplane-take-off--v3.png" />
+                        <img src="https://img.icons8.com/ios/24/000000/sell.png" />
                     </div>
-                    <p>FREE SHIPPING WORLD WIDE</p>
+                    <p>Verified Sellers</p>
                 </div>
 
                 <div class="facility__box">
                     <div class="facility-img__container">
                         <img src="https://img.icons8.com/doodle/24/000000/money.png" />
                     </div>
-                    <p>100% MONEY BACK GUARANTEE</p>
+                    <p>100% PRODUCT GUARANTEE</p>
                 </div>
 
                 <div class="facility__box">
                     <div class="facility-img__container">
-                        <img src="https://img.icons8.com/cotton/24/000000/mobile-payment--v3.png" />
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/used-product.png" />
                     </div>
-                    <p>MANY PAYMENT GATWAYS</p>
+                    <p>MANY TYPES OF PRODUCTS TO CHOOSE FROM</p>
                 </div>
 
                 <div class="facility__box">
@@ -260,38 +269,62 @@ foreach($products as $product):
             </div>
         </div>
     </section>
+
     </div>
 </main>
 <?php
   include_once "footer.php";
 ?>
 
-<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="cart__totals">
-            <?php
-                $contacts = $this->db->get_where('retaileruser', array('BussinessName' => $sellername))->result_array();
-                foreach($contacts as $contact):
-                ?>
-            <h3>Seller Contact Details</h3>
-            <ul>
-                <li>
-                    Phone Number:
-                    <span><?php echo $contact['phoneNumber'];?></span>
-                </li>
-                <li>
-                    Email:
-                    <span><?php echo $contact['email'];?></span>
-                </li>
-                <li>
-                    Address:
-                    <span><?php echo $contact['bussinessaddr1'];?></span>
-                </li>
-            </ul>
-            <a href="">Close</a>
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-title text-center">
+                    <h3>Buyer Bid Details</h3>
+                </div>
 
-            <?php endforeach; ?>
+                <div class="d-flex flex-column text-center">
+                    <form method="POST" action="<?php echo base_url();?>user/auction">
+                        <div class="form-group">
+                            <input required type="text" name="name" class="form-control" placeholder="Your Name...">
+                        </div>
+                        <div class="form-group">
+                            <input required type="email" name="email" class="form-control" placeholder="Your Email...">
+                        </div>
+                        <div class="form-group">
+                            <input required type="phone" name="phoneNumber" class="form-control"
+                                placeholder="Your Phone Number...">
+                        </div>
+                        <div class="form-group">
+                            <input required type="number" name="bid" class="form-control"
+                                placeholder="How much will you purchase this product for?...(RWF)">
+                        </div>
+                        <div class="form-group">
+                            <input required type="hidden" name="productname" value="<?php echo $product_name; ?>"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input required type="hidden" name="productid" value="<?php echo $product_id; ?>"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input required type="hidden" name="bussinessname" value="<?php echo $sellername; ?>"
+                                class="form-control">
+                        </div>
+
+                        <button type="submit" name="login" class="btn btn-info btn-block btn-round">Send Bid</button>
+                    </form>
+
+
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

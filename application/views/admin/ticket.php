@@ -22,14 +22,14 @@
               <thead>
                 <tr>
                   <th>Account Name</th>
-                  <th>Account Email</th>
+                  <!-- <th>Account Email</th> -->
                   <th>Subject</th>
                   <th>Explanation</th>
                   <th>Date</th>
-                  <th>Query Status</th>
+                  <!-- <th>Query Status</th>
                   <th>Query Reply</th>
                   <th>Reply Date</th>
-                  <th>Reply Query</th>
+                  <th>Reply Query</th> -->
                 </tr>
               </thead>
               <tbody>
@@ -39,18 +39,18 @@
               ?>
                 <tr>
                   <td><?php echo $ticket['accountName'];?></td>
-                  <td><?php echo $ticket['email'];?></td>
+                  <!-- <td><?php echo $ticket['email'];?></td> -->
                   <td><?php echo $ticket['subject'];?></td>
                   <td><?php echo $ticket['explanation'];?></td>
                   <td><?php echo $ticket['date'];?></td>
-                  <td><?php echo $ticket['status'];?></td>
+                  <!-- <td><?php echo $ticket['status'];?></td>
                   <td><?php echo $ticket['reply'];?></td>
-                  <td><?php echo $ticket['replydate'];?></td>
-                  <?php if($ticket['status'] == "Attended"){?>
+                  <td><?php echo $ticket['replydate'];?></td> -->
+                  <!-- <?php if($ticket['status'] == "Attended"){?>
                   <td><button type="button" class="btn btn-dark">Replied</button></td>
                   <?php }else{?>
                     <td> <a href="<?php echo base_url().'admin/replyticket/'.$ticket['id'];?>"><button type="button" class="btn btn-info">Reply</button></a></td>
-                  <?php } ?>
+                  <?php } ?> -->
                 </tr>
                 <?php endforeach; ?>
               </tbody>

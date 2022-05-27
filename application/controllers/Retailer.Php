@@ -14,14 +14,14 @@ class Retailer extends CI_Controller
     }
 
     public function index(){
-        if ($this->session->userdata('wholesaler_login') != 0)
+        if ($this->session->userdata('Auctioneer_login') != 0)
             redirect(base_url() . 'login', 'refresh');
         if ($this->session->userdata('admin_login') == 0)
             redirect(base_url() . 'Retailer/retailer_dashboard?', 'refresh');
     }
 
     function retailer_dashboard(){
-        // if ($this->session->userdata('wholesaler_login') != 0)
+        // if ($this->session->userdata('Auctioneer_login') != 0)
         //     redirect(base_url() . 'login', 'refresh');
         
         $this->load->view('retailer/index');
@@ -170,7 +170,7 @@ class Retailer extends CI_Controller
         $this->db->insert('ticket', $data); 
         echo '<script>alert("Successfully Submited Ticket, You will be served as soon as possible")</script>';
         $this->load->view('retailer/ticket');
-        // redirect(base_url().'wholesaler/ticket, 'refresh');
+        // redirect(base_url().'Auctioneer/ticket, 'refresh');
 
     }
 

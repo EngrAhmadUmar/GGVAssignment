@@ -298,11 +298,11 @@ foreach($products as $product):
                                         <div class="price"> RWF <?php echo $product['price'];?> </div>
                                         <?php } ?>
                                         <hr>
-                                        <a href="<?php echo base_url().'wholesaler/addtocart/'.$product['ID'];?>">
+                                        <a href="<?php echo base_url().'Auctioneer/addtocart/'.$product['ID'];?>">
                                             <button class="btn btn-default btn-xs pull-right" type="button">
                                                 <i class="fa fa-cart-arrow-down"></i> Add To Cart
                                             </button></a>
-                                        <a href="<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>"><button
+                                        <a href="<?php echo base_url().'Auctioneer/shop/'.$product['ID'];?>"><button
                                                 class="btn btn-default btn-xs pull-left" type="button">
                                                 <i class="fa fa-eye"></i> View Product Details
                                             </button></a>

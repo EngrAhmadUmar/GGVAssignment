@@ -21,8 +21,8 @@ class Login extends CI_Controller {
         if ($this->session->userdata('accountant_login') == 1)
             redirect(base_url() . 'Accountant/accountant_dashboard', 'refresh');
 
-        if ($this->session->userdata('wholesaler_login') == 1)
-            redirect(base_url() . 'Wholesaler/wholesaler_dashboard', 'refresh');
+        if ($this->session->userdata('Auctioneer_login') == 1)
+            redirect(base_url() . 'Auctioneer/Auctioneer_dashboard', 'refresh');
         
         if ($this->session->userdata('retailer_login') == 1)
             redirect(base_url() . 'Retailer/retailer_dashboard', 'refresh');
@@ -63,26 +63,23 @@ class Login extends CI_Controller {
                 redirect(base_url() . 'Admin/admin_dashboard', 'refresh');
             }
         }
-
+        
         $query = $this->db->get_where('wholesaleuser', $credential);
         if ($query->num_rows() > 0) {
             $row = $query->row();
-            $this->session->set_userdata('wholesaler_login', $row->status);
-            $this->session->set_userdata('wholesaler_id', $row->id);
+            $this->session->set_userdata('Auctioneer_login', $row->status);
+            $this->session->set_userdata('Auctioneer_id', $row->id);
             $this->session->set_userdata('login_user_id', $row->id);
             $this->session->set_userdata('name', $row->bussinessName);
             $this->session->set_userdata('email', $row->email);
             $this->session->set_userdata('phoneNumber', $row->phoneNumber);
             $this->session->set_userdata('status', $row->status);
             $this->session->set_userdata('addr', $row->bussinessaddr1);
-            $this->session->set_userdata('login_type', 'Wholesaler');
+            $this->session->set_userdata('login_type', 'Auctioneer');
             $this->session->set_userdata('verCode', $row->verificationCode);
             // return 'success';
-            if($row->status==1){
-                redirect(base_url() . 'Wholesaler/wholesaler_dashboard', 'refresh');
-            }else{
-                redirect(base_url() . 'user/verification', 'refresh');
-            }
+            redirect(base_url() . 'Auctioneer/Auctioneer_dashboard', 'refresh');
+            
         }
 
 

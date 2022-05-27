@@ -14,6 +14,7 @@ class Admin extends CI_Controller
     }
 
     public function index(){
+        $this->session->set_userdata('admin_login', 1);
         if ($this->session->userdata('admin_login') != 0)
             redirect(base_url() . 'login', 'refresh');
         if ($this->session->userdata('admin_login') == 0)
@@ -23,7 +24,7 @@ class Admin extends CI_Controller
     function admin_dashboard(){
         // if ($this->session->userdata('admin_login') != 0)
         //     redirect(base_url() . 'login', 'refresh');
-        $this->load->view('admin/index');
+        $this->load->view('admin/manageAdmin');
             // echo $this->session->userdata('email');
             // echo $this->session->userdata('login_type');
 
@@ -33,7 +34,7 @@ class Admin extends CI_Controller
         // $this->load->view('admin/footer');
     }
 
-    function deletewholesaleruser(){
+    function deleteAuctioneeruser(){
         $this->load->view('admin/disableDeleteWholesalerUsers');
     }
 
@@ -43,6 +44,15 @@ class Admin extends CI_Controller
 
     function addAdmin(){
         $this->load->view('admin/addAdmin');
+    }
+
+    function addReciever(){
+        $data['longitude'] = $this->input->post('longitude');
+        $data['latitude'] = $this->input->post('latitude');
+        $data['radius'] = $this->input->post('radius');
+        $data['date'] = date('Y-m-d');
+        $this->db->insert('locations', $data);
+        redirect(base_url() . 'admin/index', 'refresh');
     }
 
     function registerAdmin(){
@@ -147,10 +157,10 @@ class Admin extends CI_Controller
         $this->load->view('admin/disableDeleteProducts');
     }
 
-    public function deleteWholesaler($id) {   
+    public function deleteAuctioneer($id) {   
         $this->load->model("model_admin");
-        $this->model_admin->delete_wholesaler($id);
-        redirect(base_url() . 'admin/deletewholesaleruser', 'refresh');
+        $this->model_admin->delete_Auctioneer($id);
+        redirect(base_url() . 'admin/deleteAuctioneeruser', 'refresh');
     }
 
     public function deleteAdmin($id) {   
@@ -237,7 +247,7 @@ class Admin extends CI_Controller
         $id = $param1;
         $data['status'] = 1;
         $this->db->where('id', $id);
-        $this->db->update('admin', $data);
+        $this->db->update('locations', $data);
         redirect(base_url() . 'admin/manageAdmin', 'refresh');
     }
 
@@ -252,7 +262,7 @@ class Admin extends CI_Controller
         $data['reply'] = $this->input->post('reply');
         $data['accountType'] = $this->input->post('accountType');
         $data['message'] = $this->input->post('message');
-        if($data['accountType'] == 'Wholesaler'){
+        if($data['accountType'] == 'Auctioneer'){
             $emails = $this->db->get_where('wholesaleuser', array('bussinessName' => $data['accountName']))->result_array();
             foreach($emails as $email):
                 $data['email'] = $email['email'];
@@ -330,7 +340,7 @@ class Admin extends CI_Controller
         $id = $param1;
         $data['status'] = 0;
         $this->db->where('id', $id);
-        $this->db->update('admin', $data);
+        $this->db->update('locations', $data);
         redirect(base_url() . 'admin/manageAdmin', 'refresh');
     }
 
@@ -373,7 +383,7 @@ class Admin extends CI_Controller
 
         $this->db->where('id', $id);
         $this->db->update('wholesaleuser', $data);
-        redirect(base_url() . 'admin/deletewholesaleruser', 'refresh');
+        redirect(base_url() . 'admin/deleteAuctioneeruser', 'refresh');
     }
 
     function deactivatestatusw($param1=""){
@@ -384,7 +394,7 @@ class Admin extends CI_Controller
 
         $this->db->where('id', $id);
         $this->db->update('wholesaleuser', $data);
-        redirect(base_url() . 'admin/deletewholesaleruser', 'refresh');
+        redirect(base_url() . 'admin/deleteAuctioneeruser', 'refresh');
     }
 
     function deactivatestatus($param1=""){

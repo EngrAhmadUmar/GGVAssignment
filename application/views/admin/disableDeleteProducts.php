@@ -14,7 +14,7 @@
           </div>
           <hr class="mg-y-30">
 
-  <div class="az-content-label mg-b-5">View Products Published To Your Store.</div>
+  <div class="az-content-label mg-b-5">View Products Published.</div>
           <p class="mg-b-20">Hover over rows to view more details</p>
 
           <div class="table-responsive">
@@ -24,7 +24,7 @@
                   <th>ID</th>
                   <th>Product Name</th>
                   <th>Seller Name</th>
-                  <th>Available Stock</th>
+                  <th>Quantity</th>
                   <th>Price</th>
                   <th>Date Added</th>
                   <th>Product Status</th>

@@ -53,7 +53,7 @@
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="<?php echo base_url();?>styles.css" />
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -62,7 +62,7 @@
         type="text/javascript"></script>
 
 
-    <title>Moyata</title>
+    <title>Sandrah</title>
 </head>
 
 
@@ -132,15 +132,15 @@
                     </div>
 
                     <div class="nav__logo">
-                        <a href="<?php echo base_url().'wholesaler/index/';?>" class="scroll-link">
-                            Moyata eCommerce Website
+                        <a href="<?php echo base_url().'Auctioneer/index/';?>" class="scroll-link">
+                            Sandrah eCommerce Website
                         </a>
                     </div>
 
                     <div class="nav__menu">
                         <div class="menu__top">
-                            <span class="nav__category">Moyata</span>
-                            <a href="<?php echo base_url().'wholesaler/index';?>" class="close__toggle">
+                            <span class="nav__category">Sandrah</span>
+                            <a href="<?php echo base_url().'Auctioneer/index';?>" class="close__toggle">
                                 <img src="https://img.icons8.com/ios-glyphs/30/000000/shop.png" />
                             </a>
                         </div>
@@ -149,6 +149,8 @@
 
 
                             <li class="nav__item">
+
+
                                 <div class="dropdown">
                                     <a class="nav__link scroll-link">CATEGORIES</a>
                                     <div class="dropdown-content">
@@ -159,13 +161,18 @@
                                         $query = $this->db->get_where('products', $credential);
                                         if ($query->num_rows() > 0) {
                         ?>
-                                        <a href="<?php echo base_url().'wholesaler/categories/'.$category['id'];?>"><?php echo $category['categoryname'];?>
+                                        <a href="<?php echo base_url().'Auctioneer/categories/'.$category['id'];?>"><?php echo $category['categoryname'];?>
                                         </a>
                                         <?php } endforeach; ?>
                                     </div>
                                 </div>
                             </li>
 
+
+                            <li class="nav__item">
+                                <a href="" class="nav__link scroll-link" data-toggle="modal"
+                                    data-target="#loginModal">Log Out</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -175,11 +182,11 @@
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </a>
 
-                        <a href="<?php echo base_url().'wholesaler/profile/';?>" class="icon__item">
+                        <a href="<?php echo base_url().'Auctioneer/profile/';?>" class="icon__item">
                             <img src="https://img.icons8.com/metro/26/000000/user-male.png" />
                         </a>
 
-                        <a href="<?php echo base_url().'wholesaler/cart/';?>" class="icon__item">
+                        <a href="<?php echo base_url().'Auctioneer/cart/';?>" class="icon__item">
                             <img src="https://img.icons8.com/material-rounded/24/000000/fast-cart.png" />
                             <?php $rows = count($this->cart->contents()); ?>
                             <?php if( $rows > 0 ){?>
@@ -188,6 +195,8 @@
                             <span id="cart__total">0</span>
                             <?php } ?>
                         </a>
+
+
                     </div>
                 </nav>
             </div>
@@ -202,7 +211,7 @@
                 <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
                 <div class="overlay-content">
                     <div class="container-fluid">
-                        <form class="d-flex" method="POST" action="<?php echo base_url();?>wholesaler/searchbar">
+                        <form class="d-flex" method="POST" action="<?php echo base_url();?>Auctioneer/searchbar">
                             <input class="form-control me-2" name="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
@@ -214,9 +223,40 @@
 
     <?php
     $var = $this->session->userdata;
-                if(!isset($var['wholesaler_id'])){
-                    echo "<script>alert('Your session has expired, Please log in again to continue using Moyata eCommerce.');
+                if(!isset($var['Auctioneer_id'])){
+                    echo "<script>alert('Your session has expired, Please log in again to continue using Sandrah eCommerce.');
                     </script>";
                     redirect('/user/index', 'refresh');
                 }
             ?>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Are you sure you want to Log-out?</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form method="POST" action="<?php echo base_url();?>user/logout">
+                            <div class="form-group">
+                                <input required type="hidden" name="logout" class="form-control" value="Logout">
+                            </div>
+                            <button type="submit" name="login"
+                                class="btn btn-danger btn-block btn-round">Log-out</button>
+                        </form>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>

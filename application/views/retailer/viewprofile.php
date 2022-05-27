@@ -19,7 +19,7 @@
           </div>
                     <hr class="mg-y-30">
 
-          <div class="az-content-label mg-b-5">Basic Company Information</div>
+          <div class="az-content-label mg-b-5">Basic Information</div>
           <br>
           <div class="col-lg mg-t-10 mg-lg-t-0">
           <?php

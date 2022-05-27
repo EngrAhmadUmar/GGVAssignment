@@ -80,7 +80,7 @@ $var = $this->session->userdata;
             </div>
             <br>
 
-            <p class="mg-b-10">Available Stock:</p>
+            <p class="mg-b-10">Quantity:</p>
             <input class="form-control" name="availablestock" placeholder="<?php echo $product['availablestock'];?>"
                 type="text">
 

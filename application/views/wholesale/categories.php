@@ -15,7 +15,7 @@
     <div class="container">
         <div class="page__title-container">
             <ul class="page__titles">
-                <a href="<?php echo base_url().'wholesaler/index';?>">
+                <a href="<?php echo base_url().'Auctioneer/index';?>">
                     <svg>
                         <img src="https://img.icons8.com/metro/14/000000/home.png" />
                     </svg>
@@ -67,10 +67,10 @@
                                           <div class="price"> RWF <?php echo $result->price;?> </div>
                                         <?php } ?>
                                         <hr>
-                                        <a href="<?php echo base_url().'wholesaler/addtocart/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-right" type="button">
+                                        <a href="<?php echo base_url().'Auctioneer/addtocart/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-right" type="button">
                                             <i class="fa fa-cart-arrow-down"></i> Add To Cart
                                         </button></a>
-                                        <a href="<?php echo base_url().'wholesaler/shop/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-left" type="button">
+                                        <a href="<?php echo base_url().'Auctioneer/shop/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-left" type="button">
                                             <i class="fa fa-eye"></i> View Product Details
                                         </button></a>
                                     </li>

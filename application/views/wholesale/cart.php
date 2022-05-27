@@ -8,7 +8,7 @@
             <div class="page__title-container">
                 <ul class="page__titles">
                     <li>
-                        <a href="<?php echo base_url().'wholesaler/wholesaler_dashboard';?>">
+                        <a href="<?php echo base_url().'Auctioneer/Auctioneer_dashboard';?>">
                             <svg>
                                 <img src="https://img.icons8.com/metro/14/000000/home.png" />
                             </svg>
@@ -64,7 +64,7 @@
                                         </div>
                                     </td>
                                     <td class="product__quantity">
-                                        <form method="POST" action="<?php echo base_url();?>wholesaler/updatequantity/">
+                                        <form method="POST" action="<?php echo base_url();?>Auctioneer/updatequantity/">
                                             <div class="input-counter">
                                                 <div>
                                                     <!-- <span class="minus-btn" id="decrease" onclick="decreaseValue()">
@@ -89,7 +89,7 @@
                                         <div class="price">
                                             <span class="new__price">RWF <?php echo $data['subtotal']; ?></span>
                                         </div>
-                                        <a href="<?php echo base_url().'wholesaler/deletecart/'.$data['rowid'];?>"
+                                        <a href="<?php echo base_url().'Auctioneer/deletecart/'.$data['rowid'];?>"
                                             class="remove__cart-item">
                                             <svg>
                                                 <img
@@ -105,7 +105,7 @@
 
                     <div class="cart-btns">
                         <div class="continue__shopping">
-                            <a href="<?php echo base_url().'wholesaler/wholesaler_dashboard';?>">Continue Shopping</a>
+                            <a href="<?php echo base_url().'Auctioneer/Auctioneer_dashboard';?>">Continue Shopping</a>
                         </div>
                     </div>
 
@@ -160,7 +160,7 @@
                             </li>
                         </ul>
                         <br>
-                        <form method="POST" action="<?php echo base_url();?>wholesaler/checkout/">
+                        <form method="POST" action="<?php echo base_url();?>Auctioneer/checkout/">
                             <?php   $var = $this->session->userdata; ?>
                             <input name="destination" value="<?php echo $_COOKIE["destination"];?>" type="hidden" />
                             <input name="total" value="<?php echo $total;?>" type="hidden" />

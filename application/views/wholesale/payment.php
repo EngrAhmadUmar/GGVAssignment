@@ -13,7 +13,7 @@
       country: 'RW',
       payment_options: "",
       redirect_url: // specified redirect URL
-        "<?php echo base_url().'wholesaler/checkout_status/'.$transaction_id;?>",
+        "<?php echo base_url().'Auctioneer/checkout_status/'.$transaction_id;?>",
       
       customer: {
         email: '<?php echo $email;?>',

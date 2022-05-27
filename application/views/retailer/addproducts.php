@@ -9,7 +9,7 @@
 $var = $this->session->userdata;
 
 if($var['addr'] == ""){
-  echo "<script>alert('Your have not added your store address, Please input your store address in order to sell products using Moyata eCommerce.');
+  echo "<script>alert('Your have not added your address, Please input your address in order to sell products using Moyata eCommerce.');
   </script>";
   redirect('/retailer/profile', 'refresh');
 }
@@ -78,17 +78,12 @@ if($var['addr'] == ""){
             </div>
             <br>
 
-            <p class="mg-b-10">Available Stock:</p>
-            <input required class="form-control" name="availablestock" placeholder="Please input available stock"
+            <p class="mg-b-10">Quantity:</p>
+            <input required class="form-control" name="availablestock" placeholder="Please input Quantity"
                 type="text">
 
             <br>
 
-            <p class="mg-b-10">Minimum Orders:</p>
-            <input required class="form-control" name="minorder" placeholder="Please input minimum order allowed"
-                type="text">
-
-            <br>
 
             <p class="mg-b-20">Select Product Images</p>
 

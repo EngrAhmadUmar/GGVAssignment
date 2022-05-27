@@ -22,7 +22,7 @@
 $retailers = $this->db->get_where('retaileruser', array('id' => $var['retailer_id']))->result_array();
 foreach($retailers as $retailer):
 ?>
-          <div class="az-content-label mg-b-5">Basic Company Information</div>
+          <div class="az-content-label mg-b-5">Basic Information</div>
           <br>
           <form method="POST" action="<?php echo base_url();?>retailer/editaccount" enctype="multipart/form-data">
 

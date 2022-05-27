@@ -24,7 +24,7 @@ class Model_admin extends CI_Model
         $this -> db -> delete('retaileruser');
     }
 
-    public function delete_wholesaler($id){
+    public function delete_Auctioneer($id){
         $this -> db -> where('id', $id);
         $this -> db -> delete('wholesaleuser');
     }
@@ -36,7 +36,7 @@ class Model_admin extends CI_Model
 
     public function delete_Admin($id){
         $this -> db -> where('id', $id);
-        $this -> db -> delete('admin');
+        $this -> db -> delete('locations');
     }
 
     public function delete_news($id){

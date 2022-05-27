@@ -17,7 +17,7 @@
     <div class="az-content-label mg-b-5">Category details</div>
     <p class="mg-b-20">Hover over rows to highlight</p>
 
-    <a href="" data-toggle="modal" data-target="#createModal"><button type="button" class="btn btn-dark">Add Category</button></a>
+    <a href="#" data-toggle="modal" data-target="#createModal"><button type="button" class="btn btn-dark">Add Category</button></a>
     <br>
     <div class="table-responsive">
         <table class="table table-hover mg-b-0">

@@ -10,11 +10,11 @@
         <div class="az-content-body pd-lg-l-40 d-flex flex-column">
           <div class="az-content-breadcrumb">
             <span>Profile</span>
-            <span>Manage Wholesalers</span>
+            <span>Manage Auctioneers</span>
           </div>
           <hr class="mg-y-30">
 
-  <div class="az-content-label mg-b-5">Wholesaler User Profiles</div>
+  <div class="az-content-label mg-b-5">Auctioneer User Profiles</div>
           <p class="mg-b-20">Hover over rows to view more details</p>
 
           <div class="table-responsive">
@@ -24,7 +24,7 @@
                   <th>ID</th>
                   <th>Bussiness Name</th>
                   <th>Phone Number</th>
-                  <th>Bussiness Type</th>
+                  <!-- <th>Bussiness Type</th> -->
                   <th>Account Status</th>
                   <th>Date Joined</th>
                   <th>Enable/Disable User</th>
@@ -40,7 +40,7 @@
                   <th scope="row"><?php echo $wholesaleuser['id'];?></th>
                   <td><?php echo $wholesaleuser['bussinessName'];?></td>
                   <td><?php echo $wholesaleuser['phoneNumber'];?></td>
-                  <td><?php echo $wholesaleuser['bussinessType'];?></td>
+                  <!-- <td><?php echo $wholesaleuser['bussinessType'];?></td> -->
                   <td><?php echo $wholesaleuser['status'];?></td>
                   <td><?php echo $wholesaleuser['date'];?></td>
                   <td>
@@ -50,7 +50,7 @@
                     <a href="<?php echo base_url().'admin/activatestatusw/'.$wholesaleuser['id'];?>"><button class="btn btn-secondary btn-sm">Activate User</button></a>
                   <?php } ?> 
                 </td>
-                  <td><a href="<?php echo base_url().'admin/deleteWholesaler/'.$wholesaleuser['id'];?>"><img src="https://img.icons8.com/flat-round/24/000000/delete-sign.png"/></a></td>
+                  <td><a href="<?php echo base_url().'admin/deleteAuctioneer/'.$wholesaleuser['id'];?>"><img src="https://img.icons8.com/flat-round/24/000000/delete-sign.png"/></a></td>
                 </tr>
                 <?php endforeach; ?>
               </tbody>

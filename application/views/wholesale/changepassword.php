@@ -15,7 +15,7 @@
     <div class="az-content-label mg-b-5">Change Password</div>
     <br>
     <div class="col-lg mg-t-10 mg-lg-t-0">
-        <form method="POST" action="<?php echo base_url();?>wholesaler/changepasswordFunction" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo base_url();?>Auctioneer/changepasswordFunction" enctype="multipart/form-data">
 
             <p class="mg-b-10">Old Password</p>
             <input required class="form-control" name="oldpassword" placeholder="Please input your current password" type="password">

@@ -10,47 +10,45 @@
         <div class="az-content-body pd-lg-l-40 d-flex flex-column">
           <div class="az-content-breadcrumb">
             <span>Admin</span>
-            <span>View Orders</span>
+            <span>View Bids</span>
           </div>
           <hr class="mg-y-30">
 
-  <div class="az-content-label mg-b-5">Order details</div>
+  <div class="az-content-label mg-b-5">Bids details</div>
           <p class="mg-b-20">Hover over rows to highlight</p>
 
           <div class="table-responsive">
-          <button style="background-color: #1c5ca7; margin-bottom:20px; width:auto;" class="btn btn-primary delete_all"
-            onclick="exportTableToCSV('All Orders Sheet <?php echo date('M d, Y');?>.csv')">Download CSV</button>
+          <!-- <button style="background-color: #1c5ca7; margin-bottom:20px; width:auto;" class="btn btn-primary delete_all"
+            onclick="exportTableToCSV('All Orders Sheet <?php echo date('M d, Y');?>.csv')">Download CSV</button> -->
 
             <table class="table table-hover mg-b-0">
-              <thead>
-              <tr>
-                  <th>Product Name</th>
-                  <th>Product Unit</th>
-                  <th>Product Price Per Unit</th>
-                  <th>Product Purchase Price</th>
-                  <th>Date</th>
-                  <th>Total Purchase Price</th>
-                  <th>Seller Name</th>
-                  <th>Order Status</th>
-                </tr>
-              </thead>
-              <tbody>
-              <?php
-              $orders = $this->db->get_where('sales')->result_array();
-foreach($orders as $order):
-?>
+            <thead>
                 <tr>
-                  <td><?php echo $order['products'];?></td>
-                  <td><?php echo $order['unit'];?></td>
-                  <td><?php echo $order['subprice'];?></td>
-                  <td><?php echo $order['price'];?></td>
-                  <td><?php echo $order['date'];?></td>
-                  <td><?php echo $order['totalprice'];?></td>
-                  <td><?php echo $order['sellername'];?></td>
-                  <td><?php echo $order['status'];?></td>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Bid</th>
+                    <th>Product Name</th>
+                    <th>Bid Status</th>
+                    <!-- <th>Date</th> -->
                 </tr>
-                <?php endforeach; ?>
-              </tbody>
+            </thead>
+            <tbody>
+                <?php
+              $sales = $this->db->get_where('bids')->result_array();
+              foreach($sales as $sale):
+              ?>
+                <tr>
+                    <td><?php echo $sale['name'];?></td>
+                    <td><?php echo $sale['email'];?></td>
+                    <td><?php echo $sale['phone'];?></td>
+                    <td><?php echo $sale['bid'];?></td>
+                    <td><?php echo $sale['productname'];?></td>
+                    <td><?php if($sale['status'] == 1 ){echo "Bid Accepted"; } elseif ($sale['status'] == 0){echo "Bid Pending"; } else { echo "Bid Rejected"; }?></td>
+                    <!-- <td><?php echo $sale['date'];?></td> -->
+                </tr>
+                <?php endforeach;?>
+            </tbody>
             </table>
           </div>
         </div>

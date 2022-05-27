@@ -17,7 +17,7 @@ $id = $id;
       country: 'RW',
       payment_options: "",
       redirect_url: // specified redirect URL
-        "<?php echo base_url().'wholesaler/retry_checkout_status/'.$id;?>",
+        "<?php echo base_url().'Auctioneer/retry_checkout_status/'.$id;?>",
       
       customer: {
         email: '<?php echo $email;?>',

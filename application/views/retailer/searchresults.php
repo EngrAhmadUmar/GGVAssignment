@@ -27,7 +27,7 @@
             <div class="title__container">
                 <div class="section__title active" data-id="Latest Products">
                     <span class="dot"></span>
-                    <h1 class="primary__title">Electronics Section</h1>
+                    <h1 class="primary__title">Search Results</h1>
                 </div>
             </div>
             <div class="container" data-aos="fade-up" data-aos-duration="1200">

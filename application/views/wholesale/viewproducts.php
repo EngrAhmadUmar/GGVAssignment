@@ -8,9 +8,9 @@
 
 <?php
 $var = $this->session->userdata;
-$wholesalers = $this->db->get_where('wholesaleuser', array('id' => $var['wholesaler_id']))->result_array();
-foreach($wholesalers as $wholesaler):
-$bussinessName = $wholesaler['bussinessName'];
+$Auctioneers = $this->db->get_where('wholesaleuser', array('id' => $var['Auctioneer_id']))->result_array();
+foreach($Auctioneers as $Auctioneer):
+$bussinessName = $Auctioneer['bussinessName'];
 endforeach;
 ?>
 
@@ -22,7 +22,7 @@ endforeach;
           </div>
           <hr class="mg-y-30">
 
-  <div class="az-content-label mg-b-5">View Products Published To Your Store.</div>
+  <div class="az-content-label mg-b-5">View Products Published.</div>
           <p class="mg-b-20">Hover over rows to view more details</p>
 
           <div class="table-responsive">
@@ -31,7 +31,7 @@ endforeach;
                 <tr>
                   <th>ID</th>
                   <th>Product Name</th>
-                  <th>Available Stock</th>
+                  <th>Quantity</th>
                   <th>Price</th>
                   <th>Date Added</th>
                 </tr>
@@ -45,7 +45,7 @@ foreach($products as $product):
                   <th scope="row"><?php echo $product['ID'];?></th>
                   <td><?php echo $product['name'];?></td>
                   <td><?php echo $product['availablestock'];?></td>
-                  <td><?php echo $product['price'];?></td>
+                  <td>RWF <?php echo $product['price'];?></td>
                   <td><?php echo $product['date'];?></td>
                 </tr>
                 <?php endforeach;?>

@@ -92,10 +92,20 @@
                                 <li class="select">
                                 </li>
 
+                                <?php if($row['brand']!=""){
+                                    ?>
+                                <li>
+                                    <span>Brand:</span>
+                                    <a href="#"><?php echo $row['brand'];?></a>
+                                </li>
+                                <?php } ?> 
+                                <?php if($row['type']!=""){
+                                    ?>
                                 <li>
                                     <span>Product Type:</span>
                                     <a href="#"><?php echo $row['type'];?></a>
                                 </li>
+                                <?php } ?> 
                                 <li>
                                     <span>Availability:</span>
                                     <a href="#" class="in-stock"><?php echo $row['availablestock'];?></a>

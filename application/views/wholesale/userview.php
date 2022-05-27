@@ -10,7 +10,7 @@
         <div class="page__title-container">
             <ul class="page__titles">
                 <li>
-                    <a href="<?php echo base_url().'wholesaler/wholesaler_dashboard';?>">
+                    <a href="<?php echo base_url().'Auctioneer/Auctioneer_dashboard';?>">
                         <svg>
                             <img src="https://img.icons8.com/metro/14/000000/home.png" />
                         </svg>
@@ -70,7 +70,7 @@
                     </script>
 
                     <div class="product-details__btn">
-                        <a class="add" href="<?php echo base_url().'wholesaler/addtocart/'.$row['ID'];?>">
+                        <a class="add" href="<?php echo base_url().'Auctioneer/addtocart/'.$row['ID'];?>">
                             <span>
                                 <img src="https://img.icons8.com/material-rounded/24/000000/shopping-cart.png" />
                             </span>
@@ -92,17 +92,27 @@
                                 <li class="select">
                                 </li>
 
+                                <?php if($row['brand']!=""){
+                                    ?>
+                                <li>
+                                    <span>Brand:</span>
+                                    <a href="#"><?php echo $row['brand'];?></a>
+                                </li>
+                                <?php } ?> 
+                                <?php if($row['type']!=""){
+                                    ?>
                                 <li>
                                     <span>Product Type:</span>
                                     <a href="#"><?php echo $row['type'];?></a>
                                 </li>
+                                <?php } ?> 
                                 <li>
                                     <span>Availability:</span>
                                     <a href="#" class="in-stock"><?php echo $row['availablestock'];?></a>
                                 </li>
                                 <?php $category = $row['categories'];?>
                                 <form method="POST"
-                                    action="<?php echo base_url().'wholesaler/rateproduct/'.$row['ID'];?>">
+                                    action="<?php echo base_url().'Auctioneer/rateproduct/'.$row['ID'];?>">
                                     <input class="form-control" name="rateIndex"
                                         value="<?php echo $_COOKIE["rating"]+1;?>" type="hidden">
                                     <input class="form-control" name="productid" value="<?php echo $row['ID'];?>"
@@ -397,7 +407,7 @@ $(document).ready(function() {
 
 function saveToTheDB() {
     $.ajax({
-        url: "<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>",
+        url: "<?php echo base_url().'Auctioneer/shop/'.$product['ID'];?>",
         method: "POST",
         dataType: 'json',
         data: {

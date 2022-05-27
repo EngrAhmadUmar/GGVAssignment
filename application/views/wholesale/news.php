@@ -10,7 +10,7 @@
         <div class="page__title-container">
             <ul class="page__titles">
                 <li>
-                    <a href="<?php echo base_url().'wholesaler/wholesaler_dashboard';?>">
+                    <a href="<?php echo base_url().'Auctioneer/Auctioneer_dashboard';?>">
                         <svg>
                             <img src="https://img.icons8.com/metro/14/000000/home.png" />
                         </svg>

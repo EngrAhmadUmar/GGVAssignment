@@ -17,7 +17,7 @@ $var = $this->session->userdata;
           </div>
           <hr class="mg-y-30">
 
-  <div class="az-content-label mg-b-5">Managed Products Published To Your Store.</div>
+  <div class="az-content-label mg-b-5">Managed Products.</div>
           <p class="mg-b-20">Hover over rows to view more details</p>
 
           <div class="table-responsive">
@@ -26,7 +26,7 @@ $var = $this->session->userdata;
                 <tr>
                   <th>ID</th>
                   <th>Product Name</th>
-                  <th>Available Stock</th>
+                  <th>Quantity</th>
                   <th>Price</th>
                   <th>Edit Product</th>
                   <th>Delete Product</th>
@@ -41,9 +41,9 @@ $var = $this->session->userdata;
                 <th scope="row"><?php echo $product['ID'];?></th>
                   <td><?php echo $product['name'];?></td>
                   <td><?php echo $product['availablestock'];?></td>
-                  <td><?php echo $product['price'];?></td>
-                  <td><a href="<?php echo base_url().'wholesaler/editProduct/'.$product['ID'];?>"><img src="https://img.icons8.com/android/24/000000/edit.png"/></a></td>
-                  <td><a href="<?php echo base_url().'wholesaler/deleteProduct/'.$product['ID'];?>"><img src="https://img.icons8.com/flat-round/24/000000/delete-sign.png"/></a></td>
+                  <td>RWF <?php echo $product['price'];?></td>
+                  <td><a href="<?php echo base_url().'Auctioneer/editProduct/'.$product['ID'];?>"><img src="https://img.icons8.com/android/24/000000/edit.png"/></a></td>
+                  <td><a href="<?php echo base_url().'Auctioneer/deleteProduct/'.$product['ID'];?>"><img src="https://img.icons8.com/flat-round/24/000000/delete-sign.png"/></a></td>
                 </tr>
                 <?php endforeach;?>
             </table>

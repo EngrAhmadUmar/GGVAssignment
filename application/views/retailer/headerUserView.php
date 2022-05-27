@@ -53,7 +53,7 @@
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="<?php echo base_url();?>styles.css" />
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -150,18 +150,25 @@
                                 <div class="dropdown">
                                     <a class="nav__link scroll-link">CATEGORIES</a>
                                     <div class="dropdown-content">
-                                    <?php
+                                        <?php
                         $categories = $this->db->get_where('categories')->result_array();
                         foreach($categories as $category):
                             $credential = array('categories' => $category['id']);
                                         $query = $this->db->get_where('products', $credential);
                                         if ($query->num_rows() > 0) {
-                        ?> 
-                                        <a href="<?php echo base_url().'retailer/categories/'.$category['id'];?>"><?php echo $category['categoryname'];?> </a>
+                        ?>
+                                        <a href="<?php echo base_url().'retailer/categories/'.$category['id'];?>"><?php echo $category['categoryname'];?>
+                                        </a>
                                         <?php }endforeach; ?>
                                     </div>
                                 </div>
                             </li>
+
+                            <li class="nav__item">
+                                <a href="" class="nav__link scroll-link" data-toggle="modal"
+                                    data-target="#loginModal">Log Out</a>
+                            </li>
+
 
                         </ul>
                     </div>
@@ -216,3 +223,36 @@
                     redirect('/user/index', 'refresh');
                 }
             ?>
+
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Are you sure you want to Log-out?</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form method="POST" action="<?php echo base_url();?>user/logout">
+                            <div class="form-group">
+                                <input required type="hidden" name="logout" class="form-control" value="Logout">
+                            </div>
+                            <button type="submit" name="login"
+                                class="btn btn-danger btn-block btn-round">Log-out</button>
+                        </form>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>

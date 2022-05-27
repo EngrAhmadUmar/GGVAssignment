@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$config['base_url'] = 'http://localhost:8080/www.moyata.co.rw';
+$config['base_url'] = 'http://localhost/GGVAssignment';
 $config['index_page'] = '';
 // $config['uri_protocol']	= 'QUERY_STRING';
 $config['uri_protocol'] = "REQUEST_URI";

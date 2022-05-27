@@ -51,14 +51,14 @@
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="<?php echo base_url();?>styles.css" />
 
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   
   <script  defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyBgsPDm7AZ1yabqXRFv5yo2X4i5h_fDjLc"  type="text/javascript"></script>
 
 
-  <title>Moyata</title>
+  <title>Sandrah</title>
 </head>
 
   <body>
@@ -76,14 +76,14 @@
           </div>
 
           <div class="nav__logo">
-            <a href="<?php echo base_url().'wholesaler/wholsaler_dashboard';?>" class="scroll-link">
-              Moyata eCommerce Website
+            <a href="<?php echo base_url().'Auctioneer/wholsaler_dashboard';?>" class="scroll-link">
+              Sandrah eCommerce Website
             </a>
           </div>
 
           <div class="nav__menu">
             <div class="menu__top">
-              <span class="nav__category">Moyata</span>
+              <span class="nav__category">Sandrah</span>
               <a href="#" class="close__toggle">
                 <img src="https://img.icons8.com/ios-glyphs/30/000000/shop.png"/>
               </a>
@@ -96,11 +96,11 @@
               <i class="fa fa-search" aria-hidden="true"></i>
             </a>
 
-            <a href="<?php echo base_url().'wholesaler/wholesaler_dashboard/';?>" class="icon__item">
+            <a href="<?php echo base_url().'Auctioneer/Auctioneer_dashboard/';?>" class="icon__item">
               <img src="https://img.icons8.com/metro/24/000000/home.png"/>
             </a>
 
-            <a href="<?php echo base_url().'wholesaler/cart/';?>" class="icon__item">
+            <a href="<?php echo base_url().'Auctioneer/cart/';?>" class="icon__item">
               <img src="https://img.icons8.com/material-rounded/24/000000/fast-cart.png"/>
               <?php $rows = count($this->cart->contents()); ?>
               <?php if( $rows > 0 ){?>
@@ -123,7 +123,7 @@
                 <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
                 <div class="overlay-content">
                     <div class="container-fluid">
-                        <form class="d-flex" method="POST" action="<?php echo base_url();?>wholesaler/searchbar">
+                        <form class="d-flex" method="POST" action="<?php echo base_url();?>Auctioneer/searchbar">
                             <input class="form-control me-2" name="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>

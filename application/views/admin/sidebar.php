@@ -4,40 +4,21 @@
     <div class="container">
         <div class="az-content-left az-content-left-components">
             <div class="component-item">
-                <label>admin Management</label>
+                <label>Reciever Management</label>
                 <nav class="nav flex-column">
-                    <a href="<?php echo base_url().'admin/index';?>" class="nav-link" style="text-align: left;">View All Users</a>
-                    <a href="<?php echo base_url().'admin/deleteusers';?>" class="nav-link">Disable/Delete Retailer</a>
-                    <a href="<?php echo base_url().'admin/deletewholesaleruser';?>" class="nav-link">Disable/Delete
-                        Wholesaler</a>
+                    <a href="<?php echo base_url().'admin/manageadmin';?>" class="nav-link">Manage Recievers</a>
+                    <br>
+                    <a href="<?php echo base_url().'admin/addAdmin';?>" class="nav-link">Add Reciever</a>
                 </nav>
 
-                <label>Manage Store</label>
-                <nav class="nav flex-column">
-                    <a href="<?php echo base_url().'admin/viewproducts';?>" class="nav-link">View All Products</a>
-                    <a href="<?php echo base_url().'admin/feature';?>" class="nav-link">Featured Products</a>
-                    <a href="<?php echo base_url().'admin/disableDeleteProducts';?>" class="nav-link">Disable/Delete
-                        Products</a>
-                </nav>
 
-                <label>Sales, Categories and Tickets</label>
+                <!-- <label>Others</label>
                 <nav class="nav flex-column">
-                    <a href="<?php echo base_url().'admin/orders';?>" class="nav-link">Manage Orders</a>
-                    <a href="<?php echo base_url().'admin/categories';?>" class="nav-link">Manage Categories</a>
-                    <a href="<?php echo base_url().'admin/tickets';?>" class="nav-link">View Tickets</a>
-                </nav>
+                    <!-- <a href="<?php echo base_url().'admin/manageNews';?>" class="nav-link">Manage News</a> -->
 
-                <label>Add News/Admin</label>
-                <nav class="nav flex-column">
-                    <a href="<?php echo base_url().'admin/addNews';?>" class="nav-link">Add News</a>
-                    <a href="<?php echo base_url().'admin/addAdmin';?>" class="nav-link">Add admin</a>
-                </nav>
-
-                <label>Others</label>
-                <nav class="nav flex-column">
-                    <a href="<?php echo base_url().'admin/manageNews';?>" class="nav-link">Manage News</a>
-                    <a href="<?php echo base_url().'admin/manageadmin';?>" class="nav-link">Manage Admins</a>
-                </nav>
+                <!-- <br> -->
+                <a href="<?php echo base_url().'Auctioneer/logout';?>" class="nav-link">Logout</a>
+                </nav> -->
             </div>
 
             <div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog"

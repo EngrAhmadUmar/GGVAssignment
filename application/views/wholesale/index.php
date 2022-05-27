@@ -9,7 +9,7 @@
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
                 <?php
-                $products = $this->db->get_where('products', array('feature' => 1))->result_array();
+                $products = $this->db->get_where('products')->result_array();
                 foreach($products as $product):
                 ?>
 
@@ -20,7 +20,7 @@
                             <span class=""><?php echo $product['name'];?></span>
                             <h1 class=""><?php echo $product['tag_line'];?></h1>
                             <p><?php echo $product['description'];?></p>
-                            <a href="<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>"><button
+                            <a href="<?php echo base_url().'Auctioneer/shop/'.$product['ID'];?>"><button
                                     class="hero__btn">SHOP NOW</button></a>
                         </div>
                         <div class="hero__right">
@@ -61,7 +61,7 @@
         <section id="collection" class="section collection">
             <div class="collection__container" data-aos="fade-up" data-aos-duration="1200">
                 <?php
-$products = $this->db->get_where('products', array('secondfeature' => 1))->result_array();
+$products = $this->db->get_where('products')->result_array();
 foreach($products as $product):
 ?>
                 <div class="collection__box">
@@ -73,7 +73,7 @@ foreach($products as $product):
                         <div class="collection__data">
                             <span><?php echo $product['tag_line'];?></span>
                             <h1><?php echo $product['name'];?></h1>
-                            <a href="<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>">SHOP NOW</a>
+                            <a href="<?php echo base_url().'Auctioneer/shop/'.$product['ID'];?>">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
@@ -109,11 +109,11 @@ foreach($products as $product):
                                         <div class="product__price">
                                             <h4><?php echo $product['price'];?></h4>
                                         </div>
-                                        <a href="<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>"><button
+                                        <a href="<?php echo base_url().'Auctioneer/shop/'.$product['ID'];?>"><button
                                                 type="submit" class="product__btn">View Product</button></a>
                                         <br>
                                         <br>
-                                        <a href="<?php echo base_url().'wholesaler/addtocart/'.$product['ID'];?>"><button
+                                        <a href="<?php echo base_url().'Auctioneer/addtocart/'.$product['ID'];?>"><button
                                                 type="submit" class="product__btn">Add to cart</button></a>
                                         <br>
 
@@ -139,7 +139,7 @@ foreach($products as $product):
             </div>
         </section>
 
-        <section class="section related__products">
+        <!-- <section class="section related__products">
             <div class="title__container">
                 <div class="section__title filter-btn active">
                     <span class=" dot"></span>
@@ -167,11 +167,11 @@ foreach($products as $product):
                                         <div class="product__price">
                                             <h4><?php echo $product['price'];?></h4>
                                         </div>
-                                        <a href="<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>"><button
+                                        <a href="<?php echo base_url().'Auctioneer/shop/'.$product['ID'];?>"><button
                                                 type="submit" class="product__btn">View Product</button></a>
                                         <br>
                                         <br>
-                                        <a href="<?php echo base_url().'wholesaler/addtocart/'.$product['ID'];?>"><button
+                                        <a href="<?php echo base_url().'Auctioneer/addtocart/'.$product['ID'];?>"><button
                                                 type="submit" class="product__btn">Add to cart</button></a>
                                         <br>
 
@@ -193,65 +193,6 @@ foreach($products as $product):
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section related__products">
-            <div class="title__container">
-                <div class="section__title active" data-id="Latest Products">
-                    <span class="dot"></span>
-                    <h1 class="primary__title">On Sale</h1>
-                </div>
-            </div>
-            <div class="container" data-aos="fade-up" data-aos-duration="1200">
-                <div class="glide" id="glide_3">
-                    <div class="glide__track" data-glide-el="track">
-                        <div class="grid">
-
-                            <div class="content">
-                                <ul class="rig columns-4">
-                                    <?php
-                                    $this->db->limit(8);
-                                    $this->db->from('products');
-                                    $this->db->where('salesprice != ""');
-                                    
-                                    $query = $this->db->get();
-                                    
-                                  $products = $query->result_array();
-                                  foreach($products as $product):
-                                  ?>
-                                    <li>
-                                        <a href="#"><img class="product-image"
-                                                src="<?php echo base_url().'uploads/products/'.$product['image'];?>"></a>
-                                        <h4><?php echo $product['name'];?></h4>
-
-                                        <p><?php 
-                                        $content =  $product['description'];
-                                        echo substr($content, 0, 50);
-                                        echo ".....";?></p>
-
-                                        <?php if($product['salesprice'] != ""){ ?>
-                                        <div class="price">RWF <?php echo $product['salesprice'];?> </div>
-                                        <span style="text-decoration: line-through; color:red;">RWF
-                                            <?php echo $product['price'];?></span>
-                                        <?php }else{?>
-                                        <div class="price"> RWF <?php echo $product['price'];?> </div>
-                                        <?php } ?>
-                                        <hr>
-                                        <a href="<?php echo base_url().'wholesaler/addtocart/'.$product['ID'];?>">
-                                            <button class="btn btn-default btn-xs pull-right" type="button">
-                                                <i class="fa fa-cart-arrow-down"></i> Add To Cart
-                                            </button></a>
-                                        <a href="<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>"><button
-                                                class="btn btn-default btn-xs pull-left" type="button">
-                                                <i class="fa fa-eye"></i> View Product Details
-                                            </button></a>
-                                    </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
         </section>
 
         <?php
@@ -298,11 +239,11 @@ foreach($products as $product):
                                         <div class="price"> RWF <?php echo $product['price'];?> </div>
                                         <?php } ?>
                                         <hr>
-                                        <a href="<?php echo base_url().'wholesaler/addtocart/'.$product['ID'];?>">
+                                        <a href="<?php echo base_url().'Auctioneer/addtocart/'.$product['ID'];?>">
                                             <button class="btn btn-default btn-xs pull-right" type="button">
                                                 <i class="fa fa-cart-arrow-down"></i> Add To Cart
                                             </button></a>
-                                        <a href="<?php echo base_url().'wholesaler/shop/'.$product['ID'];?>"><button
+                                        <a href="<?php echo base_url().'Auctioneer/shop/'.$product['ID'];?>"><button
                                                 class="btn btn-default btn-xs pull-left" type="button">
                                                 <i class="fa fa-eye"></i> View Product Details
                                             </button></a>
@@ -316,51 +257,7 @@ foreach($products as $product):
         </section>
         <?php } endforeach; ?>
 
-        <!--New Section  -->
-        <section class="section news" id="news">
-            <div class="container">
-                <div class="title__container">
-                    <div class="section__titles">
-                        <div class="section__title active">
-                            <span class="dot"></span>
-                            <h1 class="primary__title">Moyata News</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="news__container">
-                    <div class="glide" id="glide_5">
-                        <div class="glide__track" data-glide-el="track">
-                            <ul class="glide__slides">
-                                <?php
-                $news = $this->db->get('news')->result_array();
-                foreach($news as $new):
-              ?>
-                                <li class="glide__slide">
-                                    <div class="new__card">
-                                        <div class="card__header">
-                                            <img src="<?php echo base_url().'uploads/news/'.$new['image'];?>" alt="">
-                                        </div>
-                                        <div class="card__footer">
-                                            <h3><?php echo $new['title'];?></h3>
-                                            <span>By Admin</span>
-                                            <p><?php 
-                      $content =  $new['content'];
-                      echo substr($content, 0, 200);
-                      echo ".....";?></p>
-                                            <a href="<?php echo base_url().'wholesaler/news/'.$new['id'];?>"><button
-                                                    type="submit" class="product__btn">Read More</button></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
+       -->
         <!-- Facility Section -->
         <section class="facility__section section" id="facility">
             <div class="container">

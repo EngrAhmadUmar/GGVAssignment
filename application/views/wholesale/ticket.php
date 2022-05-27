@@ -15,7 +15,7 @@
     <div class="az-content-label mg-b-5">Submit Ticket to Help Desk</div>
     <br>
     <div class="col-lg mg-t-10 mg-lg-t-0">
-        <form method="POST" action="<?php echo base_url();?>wholesaler/ticketsend" enctype="multipart/form-data">
+        <form method="POST" action="<?php echo base_url();?>Auctioneer/ticketsend" enctype="multipart/form-data">
 
             <p class="mg-b-10">Subject</p>
             <input class="form-control" name="subject" placeholder="Please ticket subject" type="text">

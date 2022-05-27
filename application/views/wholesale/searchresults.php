@@ -27,7 +27,7 @@
             <div class="title__container">
                 <div class="section__title active" data-id="Latest Products">
                     <span class="dot"></span>
-                    <h1 class="primary__title">Electronics Section</h1>
+                    <h1 class="primary__title">Search Results</h1>
                 </div>
             </div>
             <div class="container" data-aos="fade-up" data-aos-duration="1200">
@@ -59,10 +59,10 @@
                                           <div class="price"> RWF <?php echo $result->price;?> </div>
                                         <?php } ?>
                                         <hr>
-                                        <a href="<?php echo base_url().'wholesaler/addtocart/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-right" type="button">
+                                        <a href="<?php echo base_url().'Auctioneer/addtocart/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-right" type="button">
                                             <i class="fa fa-cart-arrow-down"></i> Add To Cart
                                         </button></a>
-                                        <a href="<?php echo base_url().'wholesaler/shop/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-left" type="button">
+                                        <a href="<?php echo base_url().'Auctioneer/shop/'.$result->ID;?>"><button class="btn btn-default btn-xs pull-left" type="button">
                                             <i class="fa fa-eye"></i> View Product Details
                                         </button></a>
                                     </li>

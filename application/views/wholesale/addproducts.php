@@ -5,19 +5,6 @@
   include_once "sidebar.php";
 ?>
 
-
-
-
-
-<?php 
-$var = $this->session->userdata;
-
-if($var['addr'] == ""){
-  echo "<script>alert('Your have not added your store address, Please input your store address in order to sell products using Moyata eCommerce.');
-  </script>";
-  redirect('/wholesaler/profile', 'refresh');
-}
-?>
 </div><!-- az-content-left -->
         <div class="az-content-body pd-lg-l-40 d-flex flex-column">
           <div class="az-content-breadcrumb">
@@ -28,12 +15,12 @@ if($var['addr'] == ""){
 
           <div class="az-content-label mg-b-5">Product Information</div>
           <br>
-          <form method="POST" action="<?php echo base_url();?>wholesaler/addproductFunction" enctype="multipart/form-data">
+          <form method="POST" action="<?php echo base_url();?>Auctioneer/addproductFunction" enctype="multipart/form-data">
           <div class="col-lg mg-t-10 mg-lg-t-0">
             <p class="mg-b-10">Product Name</p>
 
             <?php
-$wholesaleusers = $this->db->get_where('wholesaleuser', array('id' => $var['wholesaler_id']))->result_array();
+$wholesaleusers = $this->db->get_where('wholesaleuser', array('id' => $var['Auctioneer_id']))->result_array();
 foreach($wholesaleusers as $wholesaleuser):
 ?>
             <input class="form-control" name="bussinessAddr" value="<?php echo $wholesaleuser['bussinessaddr1'];?>" type="hidden">
@@ -47,12 +34,16 @@ foreach($wholesaleusers as $wholesaleuser):
               <br>
 
               <p class="mg-b-10">Product Tag Line:</p>
-              <input required class="form-control" name="tag_line" placeholder="Please input product Tag Line" type="text">
+              <input class="form-control" name="tag_line" placeholder="Please input product Tag Line" type="text">
+
+              <br>
+              <p class="mg-b-10">Product Location:</p>
+              <input required class="form-control" name="location" placeholder="Please input product location" type="text">
 
               <br>
 
-              <p class="mg-b-10">Product Price:</p>
-              <input required class="form-control" name="price" placeholder="Please input product price" type="text">
+              <p class="mg-b-10">Product Starting Price: (RWF)</p>
+              <input required class="form-control" name="price" placeholder="Please input product starting price" type="text">
 
               <br>
               
@@ -71,14 +62,9 @@ foreach($wholesaleusers as $wholesaleuser):
               
               <br>
 
-              <p class="mg-b-10">Available Stock:</p>
-              <input required class="form-control" name="availablestock" placeholder="Please input available stock" type="text">
+              <p class="mg-b-10">Quantity for sale:</p>
+              <input required class="form-control" name="availablestock" placeholder="Please input quantity for sale" type="text">
 
-              <br>
-
-              <p class="mg-b-10">Minimum Orders:</p>
-              <input required class="form-control" name="minorder" placeholder="Please input minimum order allowed" type="text">
-              
               <br>
 
               <p class="mg-b-20">Select Product Images</p>
@@ -136,7 +122,7 @@ foreach($wholesaleusers as $wholesaleuser):
           <div class="col-lg mg-t-10 mg-lg-t-0">
             <br>
 
-          <p class="mg-b-10">Discounts: </p>
+          <!-- <p class="mg-b-10">Discounts: </p>
               <input class="form-control" name="discount" placeholder="" type="text">
 
 
@@ -158,11 +144,7 @@ foreach($wholesaleusers as $wholesaleuser):
 
 
           <input type="date" id="start" name="discountend"
-                min="2021-01-01" max="2030-12-31">
-
-          <br>
-          <br>
-          
+                min="2021-01-01" max="2030-12-31"> -->
           <br>
           <p class="mg-b-10">Type:</p>
           <input class="form-control" name="type" placeholder="" type="text">

@@ -54,10 +54,10 @@ foreach($orders as $order):
                     <?php if($order['status'] == 'successful'){ ?>
                     <td> Payment Successfully Made</td>
                     <?php }elseif($order['status'] == 'failed'){?>
-                    <td><a href="<?php echo base_url().'wholesaler/retrypayment/'.$order['id'];?>"><button type="button"
+                    <td><a href="<?php echo base_url().'Auctioneer/retrypayment/'.$order['id'];?>"><button type="button"
                                 class="btn btn-info">Retry Payment</button></a></td>
                     <?php }elseif($order['status'] == 'Pending'){?>
-                    <td><a href="<?php echo base_url().'wholesaler/retrypayment/'.$order['id'];?>"><button type="button"
+                    <td><a href="<?php echo base_url().'Auctioneer/retrypayment/'.$order['id'];?>"><button type="button"
                                 class="btn btn-info">Make Payment</button></a></td>
                     <?php }?>
                 </tr>
