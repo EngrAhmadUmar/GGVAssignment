@@ -32,8 +32,9 @@
             <tbody>
                 <?php
                     $admins = $this->db->get('locations')->result_array();
+                    $i = 1;
                     foreach($admins as $admin):
-                      $i = 1;
+                      
                 ?>
                 <tr>
                     <th scope="row"><?php echo $i++;?></th>

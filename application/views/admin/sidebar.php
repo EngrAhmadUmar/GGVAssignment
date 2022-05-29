@@ -17,7 +17,7 @@
                     <!-- <a href="<?php echo base_url().'admin/manageNews';?>" class="nav-link">Manage News</a> -->
 
                 <!-- <br> -->
-                <a href="<?php echo base_url().'Auctioneer/logout';?>" class="nav-link">Logout</a>
+                <!-- <a href="<?php echo base_url().'Auctioneer/logout';?>" class="nav-link">Logout</a>
                 </nav> -->
             </div>
 
