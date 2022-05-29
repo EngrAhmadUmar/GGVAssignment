@@ -7,5 +7,7 @@ On the frontend of the project, the user can see the coverage radius of each ant
 In order to run the source code, you will need an sql server installed and will need to download the ggv.sql file and import it on your phpmyadmin panel, after that you will need to download the code and add it to your htdocs folder and then you can follow this link to view the frontend on your localhost: http://localhost/GGVAssignment/
 
 Link to Client View: https://ifwydnigeria.org/GGVAssignment/
+
 Link to Admin Panel: https://ifwydnigeria.org/GGVAssignment/admin/
+
 Link to Video: 
