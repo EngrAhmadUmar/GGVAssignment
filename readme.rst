@@ -10,4 +10,4 @@ Link to Client View: https://ifwydnigeria.org/GGVAssignment/
 
 Link to Admin Panel: https://ifwydnigeria.org/GGVAssignment/admin/
 
-Link to Video: 
+Link to Video: https://drive.google.com/file/d/1NVjdMRDdQn0-EYh2S10VotKfV3_9L4gy/view?usp=sharing
