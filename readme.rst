@@ -1,70 +1,11 @@
-###################
-What is CodeIgniter
-###################
+This project is an Aviation Frequency Propagation Simulator, it web-based tool that aids to simulate the coverage of receivers in order to see if there are any blind spots when antennas/recievers are deployed.
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+The project consist of an admin panel where an admin can add and remove antennas, all the admin needs to do is input the longitude, latitude and coverage radius of the antenna. After that process the admin can then activate or de-activate an antenna.
 
-*******************
-Release Information
-*******************
+On the frontend of the project, the user can see the coverage radius of each antenna, as well as where the antenna is deployed aiding the user to understand if there are blind spots and if they can better position their antennas to extract more performance from them.
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+In order to run the source code, you will need an sql server installed and will need to download the ggv.sql file and import it on your phpmyadmin panel, after that you will need to download the code and add it to your htdocs folder and then you can follow this link to view the frontend on your localhost: http://localhost/GGVAssignment/
 
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
-*******************
-Server Requirements
-*******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Link to Client View: https://ifwydnigeria.org/GGVAssignment/
+Link to Admin Panel: https://ifwydnigeria.org/GGVAssignment/admin/
+Link to Video: 
